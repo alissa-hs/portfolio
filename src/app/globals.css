@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+:root {
+  --background: #12151a;
+  --foreground: #e8e4dc;
+  --menu-paper: #f6f1ea;
+  --menu-ink: #1c2430;
+  --menu-gold: #b8973d;
+  --menu-gold-soft: rgba(184, 151, 61, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-playfair);
+}
+
+body {
+  background: radial-gradient(
+      ellipse 120% 80% at 50% -20%,
+      rgba(184, 151, 61, 0.08),
+      transparent 55%
+    ),
+    linear-gradient(168deg, #0e1116 0%, #161b22 42%, #1e242d 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-playfair), "Georgia", serif;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.menu-dining-room {
+  color: var(--foreground);
+}
+
+.menu-paper {
+  background: var(--menu-paper);
+  color: var(--menu-ink);
+  border: 1px solid var(--menu-gold-soft);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 32px 64px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.menu-paper-inner {
+  position: relative;
+}
+
+.menu-ornament {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--menu-gold),
+    transparent
+  );
+}
+
+.menu-nav-pill {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(201, 184, 150, 0.25);
+  color: #c9c0b0;
+  background: rgba(255, 255, 255, 0.03);
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.menu-nav-pill:hover {
+  color: #f2ede4;
+  border-color: rgba(184, 151, 61, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menu-nav-pill--active {
+  color: #1a1510;
+  background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 100%);
+  border-color: rgba(184, 151, 61, 0.55);
+}
+
+.menu-body {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.menu-course-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.menu-meta {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a7a62;
+}
+
+.menu-section-label {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.menu-turn-btn {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5c6570;
+  transition: color 0.2s ease;
+}
+
+.menu-turn-btn:hover:not(:disabled) {
+  color: var(--menu-ink);
+}
+
+@keyframes menu-page-turn-in {
+  from {
+    opacity: 0;
+    transform: perspective(1400px) rotateY(-14deg) translateZ(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1400px) rotateY(0deg) translateZ(0);
+  }
+}
+
+@keyframes menu-page-turn-in-back {
+  from {
+    opacity: 0;
+    transform: perspective(1400px) rotateY(14deg) translateZ(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1400px) rotateY(0deg) translateZ(0);
+  }
+}
+
+.menu-page-flip-forward {
+  transform-style: preserve-3d;
+  animation: menu-page-turn-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.menu-page-flip-back {
+  transform-style: preserve-3d;
+  animation: menu-page-turn-in-back 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-page-flip-forward,
+  .menu-page-flip-back {
+    animation: none;
+  }
+}
