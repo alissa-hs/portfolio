@@ -1,5 +1,11 @@
 import type { SoftSkill, StoryCard } from "@/types/portfolio";
 
+/** Public PDF served from `public/resume.pdf` */
+export const RESUME_PDF_PATH = "/resume.pdf";
+
+export const LINKEDIN_URL =
+  "https://www.linkedin.com/in/alissa-h-240859132/";
+
 export const heroContent = {
   eyebrow: "Software Engineer | Product-Minded Builder",
   titlePrefix: "Hi, I'm",
@@ -70,3 +76,11 @@ export const softSkills: SoftSkill[] = [
 
 export const easterEggFact =
   "I enjoy blending engineering and creativity, from shipping production systems to experimenting with warm, expressive web interactions.";
+
+/** Gratitude for engaging with the menu */
+export const chefWhisperThanks =
+  "Thank you for carefully reading through the menu.";
+
+/** Shown under the whisper; restaurant metaphor, invitation to reconnect */
+export const chefWhisperClosing =
+  "The kitchen is always open to a return guest; I look forward to hearing from you.";

@@ -4,6 +4,7 @@ export type MenuPageId =
   | "technical"
   | "soft-skills"
   | "selection"
+  | "resume"
   | "finishing";
 
 export type MenuPageMeta = {

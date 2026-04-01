@@ -3,9 +3,9 @@ import type { MenuPageMeta } from "@/types/menu";
 export const menuPages: MenuPageMeta[] = [
   {
     id: "cover",
-    navLabel: "Cover",
+    navLabel: "Intro",
     title: "Welcome",
-    subtitle: "A tasting of craft, systems, and care.",
+    subtitle: "A taste of craft, systems, and care.",
   },
   {
     id: "experience",
@@ -30,6 +30,12 @@ export const menuPages: MenuPageMeta[] = [
     navLabel: "Chef's selection",
     title: "Signature plates",
     subtitle: "A few plates worth lingering over.",
+  },
+  {
+    id: "resume",
+    navLabel: "Résumé",
+    title: "The printed folio",
+    subtitle: "Full account of experience—read here or save a copy.",
   },
   {
     id: "finishing",

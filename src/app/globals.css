@@ -51,7 +51,7 @@ html {
 }
 
 .menu-ornament {
-  width: 48px;
+  width: 72px;
   height: 1px;
   background: linear-gradient(
     90deg,
@@ -63,10 +63,10 @@ html {
 
 .menu-nav-pill {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  padding: 0.55rem 0.85rem;
+  padding: 0.65rem 1rem;
   border: 1px solid rgba(201, 184, 150, 0.25);
   color: #c9c0b0;
   background: rgba(255, 255, 255, 0.03);
@@ -90,20 +90,20 @@ html {
 
 .menu-body {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  font-size: 1.0625rem;
+  line-height: 1.68;
 }
 
 .menu-course-title {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .menu-meta {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #8a7a62;
@@ -111,14 +111,14 @@ html {
 
 .menu-section-label {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
 .menu-turn-btn {
   font-family: var(--font-playfair), Georgia, serif;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #5c6570;

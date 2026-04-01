@@ -6,6 +6,7 @@ import { heroContent } from "@/data/portfolio";
 import { menuPages } from "@/data/menu";
 import type { MenuPageId } from "@/types/menu";
 
+import { LinkedInIconLink } from "@/components/LinkedInIconLink";
 import { MenuPageBody } from "@/components/MenuPageBodies";
 
 export function MenuPortfolio() {
@@ -44,21 +45,24 @@ export function MenuPortfolio() {
   }, [goNext, goPrev]);
 
   return (
-    <div className="menu-dining-room flex min-h-screen flex-col px-4 py-8 sm:px-6 md:py-12">
-      <header className="mx-auto w-full max-w-2xl text-center">
-        <p className="font-[family-name:var(--font-playfair)] text-[0.65rem] tracking-[0.45em] text-[#c9b896] uppercase">
+    <div className="menu-dining-room flex min-h-screen flex-col px-4 py-8 sm:px-8 md:py-12 lg:px-12">
+      <header className="mx-auto w-full max-w-4xl text-center">
+        <p className="font-[family-name:var(--font-playfair)] text-[0.7rem] tracking-[0.45em] text-[#c9b896] uppercase sm:text-[0.72rem]">
           Portfolio
         </p>
-        <h1 className="mt-2 font-[family-name:var(--font-playfair)] text-3xl font-semibold tracking-wide text-white sm:text-4xl">
-          {heroContent.name} Hsueh
-        </h1>
-        <p className="mt-2 font-[family-name:var(--font-playfair)] text-sm text-[#c9b896]">
+        <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl font-semibold tracking-wide text-white sm:text-5xl">
+            {heroContent.name} Hsueh
+          </h1>
+          <LinkedInIconLink />
+        </div>
+        <p className="mt-2 font-[family-name:var(--font-playfair)] text-base text-[#c9b896] sm:text-lg">
           {heroContent.eyebrow}
         </p>
       </header>
 
       <nav
-        className="mx-auto mt-8 flex w-full max-w-3xl flex-wrap items-center justify-center gap-2 sm:gap-3"
+        className="mx-auto mt-8 flex w-full max-w-5xl flex-wrap items-center justify-center gap-2.5 sm:gap-3.5"
         aria-label="Menu sections"
       >
         {menuPages.map((page, index) => {
@@ -79,10 +83,10 @@ export function MenuPortfolio() {
         })}
       </nav>
 
-      <div className="mx-auto mt-10 flex w-full max-w-xl flex-1 flex-col sm:max-w-2xl">
-        <div className="menu-paper flex flex-1 flex-col rounded-sm px-6 py-10 shadow-2xl sm:px-10 sm:py-12">
+      <div className="mx-auto mt-10 flex w-full max-w-3xl flex-1 flex-col lg:max-w-4xl xl:max-w-5xl">
+        <div className="menu-paper flex flex-1 flex-col rounded-sm px-8 py-12 shadow-2xl sm:px-12 sm:py-14 lg:px-14 lg:py-16">
           <div className="menu-paper-inner flex flex-1 flex-col">
-            <div className="menu-ornament mx-auto mb-8" aria-hidden />
+            <div className="menu-ornament mx-auto mb-10" aria-hidden />
 
             <div
               key={`${current.id}-${pageIndex}`}
@@ -92,19 +96,19 @@ export function MenuPortfolio() {
                   : "menu-page-flip-back flex-1"
               }
             >
-              <p className="text-center font-[family-name:var(--font-playfair)] text-[0.65rem] tracking-[0.4em] text-[#8a7a62] uppercase">
+              <p className="text-center font-[family-name:var(--font-playfair)] text-[0.7rem] tracking-[0.4em] text-[#8a7a62] uppercase sm:text-[0.72rem]">
                 {current.navLabel}
               </p>
-              <h2 className="mt-3 text-center font-[family-name:var(--font-playfair)] text-2xl font-semibold text-[#1c2430] sm:text-3xl">
+              <h2 className="mt-3 text-center font-[family-name:var(--font-playfair)] text-3xl font-semibold text-[#1c2430] sm:text-4xl">
                 {current.title}
               </h2>
               {current.subtitle ? (
-                <p className="mt-2 text-center font-[family-name:var(--font-playfair)] text-base italic text-[#5c6570]">
+                <p className="mt-3 text-center font-[family-name:var(--font-playfair)] text-lg italic text-[#5c6570] sm:text-xl">
                   {current.subtitle}
                 </p>
               ) : null}
 
-              <div className="mt-10 flex-1">
+              <div className="mt-12 flex-1">
                 <MenuPageBody
                   pageId={current.id as MenuPageId}
                   showSecret={showSecret}

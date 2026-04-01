@@ -1,4 +1,13 @@
-import { easterEggFact, softSkills, storyCards } from "@/data/portfolio";
+import { LinkedInIconLink } from "@/components/LinkedInIconLink";
+import {
+  chefWhisperClosing,
+  chefWhisperThanks,
+  easterEggFact,
+  LINKEDIN_URL,
+  RESUME_PDF_PATH,
+  softSkills,
+  storyCards,
+} from "@/data/portfolio";
 import type { MenuPageId } from "@/types/menu";
 
 const experienceItems = [
@@ -44,6 +53,10 @@ const technicalGroups = [
     items: ["TypeScript", "Java", "Groovy", "JavaScript", "HTML / CSS"],
   },
   {
+    heading: "AI & workflow",
+    items: ["Claude", "Cursor", "GitHub Copilot"],
+  },
+  {
     heading: "Frameworks & services",
     items: ["Spring Boot", "REST APIs", "AWS Lambda", "Amazon ECS"],
   },
@@ -58,7 +71,11 @@ const technicalGroups = [
   },
   {
     heading: "Platforms & craft",
-    items: ["Android Studio", "CI/CD pipelines", "WordPress", "Adobe Creative Suite"],
+    items: ["Android Studio", "Figma", "Adobe Creative Suite"],
+  },
+  {
+    heading: "Language fluency",
+    items: ["Japanese — native", "Mandarin — native"],
   },
 ];
 
@@ -74,14 +91,24 @@ export function MenuPageBody({
   switch (pageId) {
     case "cover":
       return (
-        <div className="space-y-8 text-center">
+        <div className="space-y-4 text-center">
           <p className="menu-body text-[#3d4a5c]">
-            Welcome. This menu is a portfolio in disguise: each section is a
-            course in how I build, collaborate, and ship. Turn the page when you
-            are ready—the kitchen is open.
+            I was raised across Tokyo, Taiwan, and the United States; moving
+            among cultures early on deepened my curiosity about how people
+            perceive, communicate, and get their needs met—what “human
+            experience” looks like in practice, not only in theory. That lens
+            sits alongside my training in cognitive science and computer
+            science: I am drawn to how technology shapes real people, not just
+            systems, and to improving their experience through thoughtful
+            engineering. Building software is a creative act too—clarity,
+            interaction, and craft all matter.
           </p>
-          <p className="font-[family-name:var(--font-playfair)] text-sm tracking-[0.35em] text-[#8a7a62] uppercase">
-            Seasonal tasting · Engineering
+          <p className="menu-body text-[#3d4a5c]">
+            This menu is a portfolio in disguise; each section is a course in
+            how I collaborate, ship, and think.
+          </p>
+          <p className="menu-body text-[#3d4a5c]">
+            Turn the page when you are ready—the kitchen is open.
           </p>
         </div>
       );
@@ -186,6 +213,58 @@ export function MenuPageBody({
         </div>
       );
 
+    case "resume":
+      return (
+        <div className="space-y-6">
+          <div className="flex flex-col items-center gap-4 border-b border-[#d9cfc0] pb-6 sm:flex-row sm:flex-wrap sm:justify-center">
+            <a
+              href={RESUME_PDF_PATH}
+              download
+              className="menu-body inline-flex items-center justify-center rounded-full border border-[#cad9eb] bg-[#d7e4f5] px-5 py-2.5 text-sm font-semibold tracking-wide text-[#1c3f6b] transition hover:brightness-95"
+            >
+              Download PDF
+            </a>
+            <a
+              href={RESUME_PDF_PATH}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="menu-body inline-flex items-center justify-center rounded-full border border-[#d9cfc0] bg-transparent px-5 py-2.5 text-sm font-semibold tracking-wide text-[#1c2430] transition hover:bg-[#faf7f2]"
+            >
+              Open in new tab
+            </a>
+            <span className="flex items-center gap-2">
+              <LinkedInIconLink
+                className="text-[#1c4a7a]"
+                iconClassName="h-6 w-6"
+              />
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="menu-body text-sm font-semibold text-[#1c4a7a] underline decoration-[#b8973d]/50 underline-offset-4 transition hover:decoration-[#b8973d]"
+              >
+                LinkedIn profile
+              </a>
+            </span>
+          </div>
+
+          <div className="overflow-hidden rounded-sm border border-[#d9cfc0] bg-[#ebe4d9]/40 shadow-inner">
+            <iframe
+              title="Résumé PDF"
+              src={`${RESUME_PDF_PATH}#view=FitH`}
+              className="h-[min(72vh,880px)] w-full min-h-[480px]"
+            />
+          </div>
+
+          <p className="menu-body text-center text-sm text-[#5c6570]">
+            If the preview does not appear in your browser, use{" "}
+            <strong className="font-semibold text-[#3d4a5c]">Open in new tab</strong>{" "}
+            or <strong className="font-semibold text-[#3d4a5c]">Download PDF</strong>
+            .
+          </p>
+        </div>
+      );
+
     case "finishing":
       return (
         <div className="space-y-8">
@@ -212,7 +291,7 @@ export function MenuPageBody({
               <li className="menu-body">
                 <a
                   className="text-[#1c4a7a] underline decoration-[#b8973d]/50 underline-offset-4 transition hover:decoration-[#b8973d]"
-                  href="https://linkedin.com/in/alissa-h-240859132/"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -231,7 +310,15 @@ export function MenuPageBody({
               {showSecret ? "Fold the note" : "Unfold the note"}
             </button>
             {showSecret ? (
-              <p className="menu-body mt-4 italic text-[#5c6570]">{easterEggFact}</p>
+              <div className="mt-4 space-y-4">
+                <p className="menu-body italic text-[#5c6570]">{easterEggFact}</p>
+                <p className="menu-body italic text-[#5c6570]">
+                  {chefWhisperThanks}
+                </p>
+                <p className="menu-body italic text-[#5c6570]">
+                  {chefWhisperClosing}
+                </p>
+              </div>
             ) : null}
           </div>
         </div>
