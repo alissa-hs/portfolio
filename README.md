@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alissa Hsueh — Portfolio
 
-## Getting Started
+An interactive portfolio styled as a restaurant menu. Built with Next.js, React, and Tailwind CSS.
 
-First, run the development server:
+## Concept
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The portfolio uses a tasting-menu metaphor: each section is a "course," navigation pills are menu items, and pages turn with a directional 3D flip animation. The framing is intentional — it reflects a belief that how something is presented is part of the craft.
+
+## Stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 16 (App Router) |
+| UI | React 19 |
+| Styling | Tailwind CSS 4 + PostCSS |
+| Language | TypeScript 5 |
+| Typography | Playfair Display (Google Fonts) |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx       # Root layout, font setup, metadata
+│   ├── page.tsx         # Entry point
+│   └── globals.css      # Design tokens, component classes, animations
+├── components/
+│   ├── MenuPortfolio.tsx    # Page state, navigation, keyboard handling
+│   ├── MenuPageBodies.tsx   # Content for each section
+│   └── LinkedInIconLink.tsx # Reusable icon link
+├── data/
+│   ├── menu.ts          # Section metadata (titles, subtitles, nav labels)
+│   └── portfolio.ts     # Portfolio content (hero, projects, skills)
+└── types/
+    ├── menu.ts          # MenuPageId, MenuPageMeta
+    └── portfolio.ts     # StoryCard, SoftSkill
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Content lives in `src/data/` — separated from rendering logic so updates don't require touching components.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How the Page Flip Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Page turns use CSS 3D transforms rather than a JS animation library. Two keyframe animations handle directionality:
 
-## Learn More
+- **Forward** (`menu-page-turn-in`): new page rotates in from the left (`rotateY(-14deg)` → `0deg`)
+- **Back** (`menu-page-turn-in-back`): new page rotates in from the right (`rotateY(14deg)` → `0deg`)
 
-To learn more about Next.js, take a look at the following resources:
+The `direction` state in `MenuPortfolio` tracks which way the user is navigating, and the appropriate CSS class is applied to the incoming page element. Re-keying the element on `pageIndex` forces React to remount it, which restarts the animation on every navigation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Animations are disabled for users with `prefers-reduced-motion` set.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Sections
 
-## Deploy on Vercel
+| Nav Label | Title | Contents |
+|---|---|---|
+| Cover | Welcome | Introduction |
+| Experience | The kitchen résumé | Work history |
+| Technical | Mise en place | Languages, frameworks, tools |
+| Soft skills | Service & room | Leadership, mentorship, collaboration |
+| Selection | Signature plates | Three in-depth project stories |
+| Resume | The printed folio | Embedded PDF + download |
+| Finishing | Sweet endings | Education, contact, easter egg |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Running Locally
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Requires Node.js 18+.
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+```bash
+npm run build   # production build
+npm run lint    # ESLint
+```
+
+## Navigation
+
+- Click any nav pill to jump to a section
+- Previous / Next buttons in the page footer
+- Left / Right arrow keys
+
+## Development Notes
+
+Built with [Cursor](https://cursor.sh) using AI-assisted development. The architecture, design decisions, and all content are my own; Cursor was used as a coding collaborator throughout. The `CLAUDE.md` and `AGENTS.md` files in the repo root are instruction files for AI coding tools — they're not part of the application.
