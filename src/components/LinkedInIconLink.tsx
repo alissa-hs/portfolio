@@ -15,7 +15,7 @@ export function LinkedInIconLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Alissa Hsueh on LinkedIn"
-      className={`inline-flex shrink-0 text-[#c9b896] transition hover:text-[#e8dcc8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b8973d] ${className}`}
+      className={`inline-flex shrink-0 text-menu-gold-light transition hover:text-menu-gold-lighter focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-menu-gold ${className}`}
     >
       <svg
         className={iconClassName}

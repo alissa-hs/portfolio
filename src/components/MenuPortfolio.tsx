@@ -47,16 +47,16 @@ export function MenuPortfolio() {
   return (
     <div className="menu-dining-room flex min-h-screen flex-col px-4 py-8 sm:px-8 md:py-12 lg:px-12">
       <header className="mx-auto w-full max-w-4xl text-center">
-        <p className="font-[family-name:var(--font-playfair)] text-[0.7rem] tracking-[0.45em] text-[#c9b896] uppercase sm:text-[0.72rem]">
+        <p className="text-[0.7rem] tracking-[0.45em] text-menu-gold-light uppercase sm:text-[0.72rem]">
           Portfolio
         </p>
         <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-          <h1 className="font-[family-name:var(--font-playfair)] text-4xl font-semibold tracking-wide text-white sm:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-wide text-white sm:text-5xl">
             {heroContent.name} Hsueh
           </h1>
           <LinkedInIconLink />
         </div>
-        <p className="mt-2 font-[family-name:var(--font-playfair)] text-base text-[#c9b896] sm:text-lg">
+        <p className="mt-2 text-base text-menu-gold-light sm:text-lg">
           {heroContent.eyebrow}
         </p>
       </header>
@@ -96,14 +96,14 @@ export function MenuPortfolio() {
                   : "menu-page-flip-back flex-1"
               }
             >
-              <p className="text-center font-[family-name:var(--font-playfair)] text-[0.7rem] tracking-[0.4em] text-[#8a7a62] uppercase sm:text-[0.72rem]">
+              <p className="text-center text-[0.7rem] tracking-[0.4em] text-menu-label uppercase sm:text-[0.72rem]">
                 {current.navLabel}
               </p>
-              <h2 className="mt-3 text-center font-[family-name:var(--font-playfair)] text-3xl font-semibold text-[#1c2430] sm:text-4xl">
+              <h2 className="mt-3 text-center text-3xl font-semibold text-menu-ink sm:text-4xl">
                 {current.title}
               </h2>
               {current.subtitle ? (
-                <p className="mt-3 text-center font-[family-name:var(--font-playfair)] text-lg italic text-[#5c6570] sm:text-xl">
+                <p className="mt-3 text-center text-lg italic text-menu-muted sm:text-xl">
                   {current.subtitle}
                 </p>
               ) : null}
@@ -118,7 +118,7 @@ export function MenuPortfolio() {
             </div>
           </div>
 
-          <footer className="mt-12 flex flex-col items-center gap-4 border-t border-[#d9cfc0] pt-8 sm:flex-row sm:justify-between">
+          <footer className="mt-12 flex flex-col items-center gap-4 border-t border-menu-border pt-8 sm:flex-row sm:justify-between">
             <button
               type="button"
               onClick={goPrev}
@@ -127,7 +127,7 @@ export function MenuPortfolio() {
             >
               ← Previous course
             </button>
-            <p className="font-[family-name:var(--font-playfair)] text-xs tracking-[0.25em] text-[#8a7a62] uppercase">
+            <p className="text-xs tracking-[0.25em] text-menu-label uppercase">
               Page {pageIndex + 1} of {total}
             </p>
             <button
@@ -141,7 +141,7 @@ export function MenuPortfolio() {
           </footer>
         </div>
 
-        <p className="mt-6 text-center font-[family-name:var(--font-playfair)] text-xs text-[#6b7280]">
+        <p className="mt-6 text-center text-xs text-menu-muted">
           Use arrow keys to turn the page.
         </p>
       </div>

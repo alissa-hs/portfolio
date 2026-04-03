@@ -4,15 +4,45 @@
   --background: #12151a;
   --foreground: #e8e4dc;
   --menu-paper: #f6f1ea;
+  --menu-paper-highlight: #faf7f2;
   --menu-ink: #1c2430;
+  --menu-body-text: #3d4a5c;
+  --menu-muted: #5c6570;
+  --menu-label: #8a7a62;
   --menu-gold: #b8973d;
   --menu-gold-soft: rgba(184, 151, 61, 0.35);
+  --menu-gold-light: #c9b896;
+  --menu-gold-lighter: #e8dcc8;
+  --menu-border: #d9cfc0;
+  --menu-border-light: #ebe4d9;
+  --menu-link: #1c4a7a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-menu-paper: var(--menu-paper);
+  --color-menu-paper-highlight: var(--menu-paper-highlight);
+  --color-menu-ink: var(--menu-ink);
+  --color-menu-body-text: var(--menu-body-text);
+  --color-menu-muted: var(--menu-muted);
+  --color-menu-label: var(--menu-label);
+  --color-menu-gold: var(--menu-gold);
+  --color-menu-gold-soft: var(--menu-gold-soft);
+  --color-menu-gold-light: var(--menu-gold-light);
+  --color-menu-gold-lighter: var(--menu-gold-lighter);
+  --color-menu-border: var(--menu-border);
+  --color-menu-border-light: var(--menu-border-light);
+  --color-menu-link: var(--menu-link);
   --font-sans: var(--font-playfair);
+}
+
+* {
+  cursor: url('/fork-pointer.svg') 30 6, default;
+}
+
+a, button, [role="button"], select, label {
+  cursor: url('/fork-pointer.svg') 30 6, pointer;
 }
 
 body {
@@ -68,7 +98,7 @@ html {
   text-transform: uppercase;
   padding: 0.65rem 1rem;
   border: 1px solid rgba(201, 184, 150, 0.25);
-  color: #c9c0b0;
+  color: var(--menu-gold-light);
   background: rgba(255, 255, 255, 0.03);
   transition:
     color 0.25s ease,
@@ -77,14 +107,14 @@ html {
 }
 
 .menu-nav-pill:hover {
-  color: #f2ede4;
+  color: var(--menu-gold-lighter);
   border-color: rgba(184, 151, 61, 0.45);
   background: rgba(255, 255, 255, 0.06);
 }
 
 .menu-nav-pill--active {
-  color: #1a1510;
-  background: linear-gradient(180deg, #e8dcc8 0%, #d4c4a8 100%);
+  color: var(--menu-ink);
+  background: linear-gradient(180deg, var(--menu-gold-lighter) 0%, #d4c4a8 100%);
   border-color: rgba(184, 151, 61, 0.55);
 }
 
@@ -106,7 +136,19 @@ html {
   font-size: 0.8125rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #8a7a62;
+  color: var(--menu-label);
+}
+
+.menu-link {
+  color: var(--menu-link);
+  text-decoration: underline;
+  text-decoration-color: var(--menu-gold-soft);
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.menu-link:hover {
+  text-decoration-color: var(--menu-gold);
 }
 
 .menu-section-label {
@@ -121,7 +163,7 @@ html {
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #5c6570;
+  color: var(--menu-muted);
   transition: color 0.2s ease;
 }
 
