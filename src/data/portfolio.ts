@@ -131,15 +131,15 @@ export const storyCards: StoryCard[] = [
 export const softSkills: SoftSkill[] = [
   {
     title: "Leadership",
-    body: "Selected as a Goldman Sachs forum leader to connect 70+ analysts across Americas offices through events and talks.",
+    body: "Leading isn't about a title — it's about making people feel seen and connected. At Goldman Sachs, I was selected to lead the CWS Americas Analyst Forum, bringing together 70+ analysts across offices through curated talk sessions and social events. I learned that the best communities aren't built top-down; they grow when people feel genuinely heard and valued.",
   },
   {
     title: "Mentorship",
-    body: "Mentored 16 Google-sponsored students through programming foundations in JavaScript, HTML, and CSS.",
+    body: "I believe the best mentors don't just teach — they make people feel capable. Through Google's CSSI program, I guided 16 students through their first experiences with JavaScript, HTML, and CSS, many of whom had never written a line of code. Watching someone go from 'I can't do this' to 'I built that' is something I carry into every technical collaboration.",
   },
   {
     title: "Collaboration",
-    body: "Partner closely with engineers, PMs, and designers to balance user experience, technical feasibility, and execution speed.",
+    body: "I've never believed that good software is built in silos. Whether working with engineers, PMs, or designers, I think the best outcomes happen when everyone's perspective is on the table early. I bring a cognitive science lens to cross-functional work: I'm as curious about what users need as I am about what the system can do, and I try to be the bridge between those two conversations.",
   },
 ];
 
