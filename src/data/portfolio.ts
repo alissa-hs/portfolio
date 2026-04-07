@@ -131,15 +131,15 @@ export const storyCards: StoryCard[] = [
 export const softSkills: SoftSkill[] = [
   {
     title: "Leadership",
-    body: "Leading isn't about a title — it's about making people feel seen and connected. At Goldman Sachs, I was selected to lead the CWS Americas Analyst Forum, bringing together 70+ analysts across offices through curated talk sessions and social events. I learned that the best communities aren't built top-down; they grow when people feel genuinely heard and valued.",
+    body: "Leading is about making people feel seen and connected. At Goldman Sachs, I was selected to lead my division's Americas Analyst Forum, bringing together 70+ analysts across offices through curated talk sessions and social events. This also heavily involved working with senior leadership to secure funding as well as support from them to connect people beyond titles. I learned that the best communities aren't built top-down; they grow when people feel genuinely heard and valued.",
   },
   {
     title: "Mentorship",
-    body: "I believe the best mentors don't just teach — they make people feel capable. Through Google's CSSI program, I guided 16 students through their first experiences with JavaScript, HTML, and CSS, many of whom had never written a line of code. Watching someone go from 'I can't do this' to 'I built that' is something I carry into every technical collaboration.",
+    body: "As a lead of Google's CSSI program, I guided 16 high schoool students through their first experiences with computer science, focusing on JavaScript, HTML, and CSS, many of whom had never written a line of code. Watching someone and guiding their way from from 'I can't do this' to 'I built that' is something I cherish and seek to continue fostering a sense of community in my next opportunity.",
   },
   {
     title: "Collaboration",
-    body: "I've never believed that good software is built in silos. Whether working with engineers, PMs, or designers, I think the best outcomes happen when everyone's perspective is on the table early. I bring a cognitive science lens to cross-functional work: I'm as curious about what users need as I am about what the system can do, and I try to be the bridge between those two conversations.",
+    body: "Good software is not built in silos. Whether working with engineers, PMs, or designers, the best outcomes happen when everyone's perspective is on the table early. I bring a cognitive science lens to cross-functional work: putting the users' needs first and foremost. Actively communicating with all parties involved to ensure alignment and smooth delivery.",
   },
 ];
 
