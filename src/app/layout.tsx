@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
+import { Monsieur_La_Doulaise, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import SparkleTrail from "@/components/SparkleTrail";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
+const monsieurLaDoulaise = Monsieur_La_Doulaise({
+  variable: "--font-monsieur-la-doulaise",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -28,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} h-full antialiased`}
+      className={`${playfair.variable} ${monsieurLaDoulaise.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {GA_ID && (

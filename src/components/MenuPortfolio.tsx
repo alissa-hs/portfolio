@@ -83,10 +83,15 @@ export function MenuPortfolio() {
         })}
       </nav>
 
-      <div className="mx-auto mt-10 flex w-full max-w-3xl flex-1 flex-col lg:max-w-4xl xl:max-w-5xl">
-        <div className="menu-paper flex flex-1 flex-col rounded-sm px-8 py-12 shadow-2xl sm:px-12 sm:py-14 lg:px-14 lg:py-16">
+      <p className="mt-4 text-center text-xs text-menu-muted">
+        Use arrow keys to turn the page.
+      </p>
+
+      <div className="mx-auto mt-6 flex w-full max-w-3xl flex-1 flex-col lg:max-w-4xl xl:max-w-5xl">
+        <div className="menu-paper flex flex-1 flex-col rounded-2xl px-8 py-12 shadow-2xl sm:px-12 sm:py-14 lg:px-14 lg:py-16">
           <div className="menu-paper-inner flex flex-1 flex-col">
-            <div className="menu-ornament mx-auto mb-10" aria-hidden />
+            <div className="menu-corner-frame" aria-hidden />
+            <div className="menu-ornament mx-auto mb-10" aria-hidden><span>✦</span></div>
 
             <div
               key={`${current.id}-${pageIndex}`}
@@ -99,7 +104,7 @@ export function MenuPortfolio() {
               <p className="text-center text-[0.7rem] tracking-[0.4em] text-menu-label uppercase sm:text-[0.72rem]">
                 {current.navLabel}
               </p>
-              <h2 className="mt-3 text-center text-3xl font-semibold text-menu-ink sm:text-4xl">
+              <h2 className="mt-3 text-center text-5xl text-menu-ink sm:text-6xl" style={{ fontFamily: "var(--font-monsieur-la-doulaise)" }}>
                 {current.title}
               </h2>
               {current.subtitle ? (
@@ -141,9 +146,6 @@ export function MenuPortfolio() {
           </footer>
         </div>
 
-        <p className="mt-6 text-center text-xs text-menu-muted">
-          Use arrow keys to turn the page.
-        </p>
       </div>
     </div>
   );
