@@ -30,8 +30,8 @@ export function FinishingPage({
         </h3>
         <ul className="mt-3 list-none space-y-2 p-0">
           <li className="menu-body">
-            <a className="menu-link" href="mailto:ahsth3636@gmail.com">
-              ahsth3636@gmail.com
+            <a className="menu-link" href="mailto:hsueh.alissa@gmail.com">
+              hsueh.alissa@gmail.com
             </a>
           </li>
           <li className="menu-body">
