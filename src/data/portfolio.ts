@@ -18,12 +18,22 @@ export const heroContent = {
 
 export const experienceItems: ExperienceItem[] = [
   {
+    place: "Esampo.com",
+    role: "Software Engineer (Freelance)",
+    period: "Mar 2026 – Present · Remote",
+    notes: [
+      "Leveraged Claude Code as a force multiplier to lead migration of a legacy WordPress/GCP platform to a modern architecture — accelerating architectural decisions and full-stack implementation across 700 posts, 300+ interactive quizzes, and 2,000+ media assets.",
+      "Evaluated and integrated modern tooling (Vercel, Supabase, Cloudflare, TinaCMS) to build a maintainable content platform, enabling non-engineering stakeholders to edit content directly and eliminating the previous developer bottleneck.",
+    ],
+  },
+  {
     place: "Goldman Sachs",
     role: "Software Engineer, Third Party Risk Management",
     period: "Sep 2024 – Nov 2025",
     notes: [
-      "Founding engineer on a greenfield vendor risk registry — designed and shipped cloud-native services supporting 10k+ vendors and firm-wide regulatory compliance across global markets.",
-      "Built with TypeScript, Java Spring Boot, and AWS (S3, DynamoDB, ECS, Lambda, Aurora PostgreSQL); established CI/CD pipelines enabling rapid, reliable delivery of compliance-critical features.",
+      "Core engineer on the founding team of a greenfield, cloud-native platform consolidating fragmented third-party vendor risk data into a centralized registry supporting 10,000+ vendors and firm-wide regulatory compliance — among the first teams at the firm to build natively on AWS.",
+      "Architected a distributed microservices backend on AWS (ECS, Lambda, DynamoDB, Aurora PostgreSQL) with RESTful API contracts that let downstream teams integrate without direct database access, eliminating prior timeout errors; established JUnit/Mockito testing achieving 90% code coverage across the service layer.",
+      "Designed and owned the platform's production alerting and observability pipeline (CloudWatch, PagerDuty) with a structured on-call rotation, enabling detection of data-refresh failures before they impacted downstream regulatory reports.",
     ],
   },
   {
@@ -31,8 +41,8 @@ export const experienceItems: ExperienceItem[] = [
     role: "Software Engineer, Spend & Data Automation",
     period: "Jul 2022 – Sep 2024",
     notes: [
-      "Engineered SAP-to-internal-platform data integrations in Java and Spring Boot, enabling auditable financial data flows supporting oversight of ~$16B in annual non-compensation spend across multiple business units.",
-      "Automated firm-wide charitable contribution approvals and invoice exception workflows using Groovy-based internal tooling — eliminating manual bottlenecks and strengthening financial reporting transparency and auditability.",
+      "Replaced a fully manual charitable contribution approval process with an automated workflow, integrating third-party payment provider Candex to eliminate manual handoffs and payment delays while preserving a full audit trail.",
+      "Engineered data integration pipelines between SAP and internal expense management platforms using Java and Spring Boot, supporting oversight of ~$16B in annual non-compensation spend.",
     ],
   },
   {
@@ -49,7 +59,8 @@ export const experienceItems: ExperienceItem[] = [
     role: "Full Stack Developer Intern",
     period: "Mar – Aug 2021 · Tokyo",
     notes: [
-      "Led full-stack rebrand and relaunch of a lifestyle platform for a venture-backed company — overhauling frontend, backend, and database layers on GCP for a live user base of 35k.",
+      "Migrated 100+ pages of high-traffic PHP quiz infrastructure (ovulation calculators, wellness tools) from on-premise to GCP with zero downtime.",
+      "Independently architected the migration and executed a full UI/UX redesign for a women's lifestyle platform with 35,000+ users.",
     ],
   },
 ];
@@ -57,15 +68,21 @@ export const experienceItems: ExperienceItem[] = [
 export const technicalGroups: TechnicalGroup[] = [
   {
     heading: "Languages",
-    items: ["TypeScript", "Java", "Groovy", "JavaScript", "HTML / CSS"],
+    items: ["Java", "Python", "TypeScript", "Groovy", "SQL"],
   },
   {
     heading: "AI & workflow",
-    items: ["Claude", "Cursor", "GitHub Copilot"],
+    items: ["Claude Code", "Cursor", "GitHub Copilot"],
   },
   {
     heading: "Frameworks & services",
-    items: ["Spring Boot", "REST APIs", "AWS Lambda", "Amazon ECS"],
+    items: [
+      "Spring Boot",
+      "RESTful APIs",
+      "Microservices",
+      "AWS Lambda",
+      "Amazon ECS",
+    ],
   },
   {
     heading: "Data & cloud",
@@ -73,16 +90,25 @@ export const technicalGroups: TechnicalGroup[] = [
       "Amazon S3",
       "DynamoDB",
       "Aurora PostgreSQL",
+      "CloudWatch",
       "Google Cloud Platform",
     ],
   },
   {
-    heading: "Platforms & craft",
-    items: ["Android Studio", "Figma", "Adobe Creative Suite"],
+    heading: "Modern web stack",
+    items: ["Next.js", "Vercel", "Supabase", "Cloudflare", "TinaCMS"],
+  },
+  {
+    heading: "Product & delivery",
+    items: ["A/B testing", "Agile / Scrum", "Android Studio", "Figma"],
   },
   {
     heading: "Language fluency",
-    items: ["Japanese — native", "Mandarin — native"],
+    items: [
+      "English — native",
+      "Japanese — fluent",
+      "Mandarin Chinese — fluent",
+    ],
   },
 ];
 
@@ -148,6 +174,13 @@ export const easterEggFact =
 
 export const chefWhisperThanks =
   "Thank you for carefully reading through the menu.";
+
+/** Bookends: a short credit on the cover, the fuller colophon on the last page. */
+export const coverCredit =
+  "Written, designed, and illustrated by Alissa Hsueh — fork included.";
+
+export const colophon =
+  "Menu written, designed, and built by Alissa Hsueh — including the fork you have been dining with.";
 
 export const chefWhisperClosing =
   "The kitchen is always open to a return guest; I look forward to hearing from you.";

@@ -1,6 +1,7 @@
 import {
   chefWhisperClosing,
   chefWhisperThanks,
+  colophon,
   easterEggFact,
   LINKEDIN_URL,
 } from "@/data/portfolio";
@@ -30,7 +31,12 @@ export function FinishingPage({
         </h3>
         <ul className="mt-3 list-none space-y-2 p-0">
           <li className="menu-body">
-            <a className="menu-link" href="mailto:hsueh.alissa@gmail.com">
+            <a
+              className="menu-link"
+              href="mailto:hsueh.alissa@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               hsueh.alissa@gmail.com
             </a>
           </li>
@@ -69,6 +75,12 @@ export function FinishingPage({
           </div>
         ) : null}
       </div>
+      <div className="menu-ornament mx-auto" aria-hidden>
+        <span>✦</span>
+      </div>
+      <p className="menu-body text-center text-xs italic leading-relaxed text-menu-label sm:text-[0.8125rem]">
+        {colophon}
+      </p>
     </div>
   );
 }

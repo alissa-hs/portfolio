@@ -1,3 +1,5 @@
+import { coverCredit } from "@/data/portfolio";
+
 export function CoverPage() {
   return (
     <div className="space-y-4 text-center">
@@ -17,6 +19,12 @@ export function CoverPage() {
       </p>
       <p className="menu-body text-menu-body-text">
         Turn the page when you are ready—the kitchen is open.
+      </p>
+      <div className="menu-ornament mx-auto pt-2" aria-hidden>
+        <span>✦</span>
+      </div>
+      <p className="menu-body text-xs italic leading-relaxed text-menu-label sm:text-[0.8125rem]">
+        {coverCredit}
       </p>
     </div>
   );
